@@ -4,6 +4,10 @@
 /** @module webreed-text-mode */
 
 
+// Project
+import TextMode from "./TextMode";
+
+
 /**
  * Setup a new instance of the plugin.
  *
@@ -15,5 +19,8 @@
  * @returns {module:webreed/lib/interfaces/Mode}
  *   A mode for reading and writing resource files.
  */
-export default function setup() {
+export default function setup(env, options) {
+  let instance = new TextMode();
+
+  env.modes.set("text", instance);
 }

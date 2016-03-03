@@ -11,6 +11,9 @@
   "author": "Rotorz Limited",
   "license": "MIT",
   "dependencies": {
+    "fs-promise": "^0.5.0",
+    "js-yaml": "^3.4.6",
+    "webreed-core": "^0.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
