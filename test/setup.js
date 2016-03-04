@@ -11,7 +11,7 @@ import Environment from "webreed-core/lib/Environment";
 
 // Project
 import TextMode from "../src/TextMode";
-import setup from "../src";
+import setup from "../src/setup";
 
 
 describe("#setup(options)", function () {

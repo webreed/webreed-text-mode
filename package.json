@@ -2,7 +2,7 @@
   "name": "webreed-text-mode",
   "version": "0.0.1",
   "description": "Text mode plugin for webreed.",
-  "main": "lib/index.js",
+  "main": "lib/setup.js",
   "scripts": {
     "prepublish": "babel src --out-dir lib",
     "devmode": "babel --watch src --out-dir lib",
