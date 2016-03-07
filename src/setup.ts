@@ -21,7 +21,7 @@ export type PluginOptions = { };
  * @param options
  *   Additional options for configuring the plugin instnace.
  */
-export default function setup(env: Environment, options?: PluginOptions): void {
+export default function (env: Environment, options?: PluginOptions): void {
   let instance = new TextMode();
 
   env.modes.set("text", instance);

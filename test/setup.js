@@ -18,11 +18,6 @@ describe("#setup(options)", function () {
       .should.be.a.Function();
   });
 
-  it("is named 'setup'", function () {
-    setup.name
-      .should.be.eql("setup");
-  });
-
   it("adds 'text' mode to the environment", function () {
     let env = new Environment();
     setup(env);
