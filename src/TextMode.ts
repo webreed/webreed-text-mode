@@ -2,14 +2,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 
-// System
 import { Buffer } from "buffer";
 
-// Packages
 const fs = require("fs-promise");
 import * as yaml from "js-yaml";
 
-// Webreed Core
 import Mode from "webreed-core/lib/interfaces/Mode";
 import Resource from "webreed-core/lib/Resource";
 import ResourceType from "webreed-core/lib/ResourceType";

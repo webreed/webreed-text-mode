@@ -2,18 +2,14 @@
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 
-// System
 import fs from "fs-promise";
 import path from "path";
 
-// Packages
 import given from "mocha-testdata";
 import should from "should";
 
-// Webreed Core
 import ResourceType from "webreed-core/lib/ResourceType";
 
-// Project
 import TextMode from "../lib/TextMode";
 
 

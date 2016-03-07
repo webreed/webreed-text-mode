@@ -2,10 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 
-// Project
 import TextMode from "./TextMode";
 
-// Webreed Core
 import Environment from "webreed-core/lib/Environment";
 
 
