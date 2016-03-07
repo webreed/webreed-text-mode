@@ -17,7 +17,7 @@ import {ResourceType} from "webreed-core/lib/ResourceType";
  */
 export class TextMode implements Mode {
 
-  async readFile(path: string, resourceType: ResourceType): Promise<Object> {
+  public async readFile(path: string, resourceType: ResourceType): Promise<Object> {
     let parseFrontmatter = !!resourceType ? resourceType.parseFrontmatter : true;
     let encoding = resolveEncoding(resourceType);
 
@@ -30,7 +30,7 @@ export class TextMode implements Mode {
     return data;
   }
 
-  writeFile(path: string, resource: Resource, resourceType: ResourceType): Promise<void> {
+  public writeFile(path: string, resource: Resource, resourceType: ResourceType): Promise<void> {
     let data: any = resource || { };
 
     let encoding = data["_encoding"] || resolveEncoding(resourceType);
@@ -61,7 +61,7 @@ export class TextMode implements Mode {
    * @returns
    *   An object with fields from frontmatter.
    */
-  readString(source: string, parseFrontmatter: boolean = true): { [key: string]: any } {
+  public readString(source: string, parseFrontmatter: boolean = true): { [key: string]: any } {
     if (parseFrontmatter === undefined || parseFrontmatter === null) {
       parseFrontmatter = true;
     }
