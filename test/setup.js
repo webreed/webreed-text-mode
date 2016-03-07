@@ -10,8 +10,8 @@ import should from "should";
 import Environment from "webreed-core/lib/Environment";
 
 // Project
-import TextMode from "../src/TextMode";
-import setup from "../src/setup";
+import TextMode from "../lib/TextMode";
+import setup from "../lib/setup";
 
 
 describe("#setup(options)", function () {

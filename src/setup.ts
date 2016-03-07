@@ -1,25 +1,29 @@
 // Copyright (c) Rotorz Limited. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
-/** @module webreed-text-mode */
-
 
 // Project
 import TextMode from "./TextMode";
+
+// Webreed Core
+import Environment from "webreed-core/lib/Environment";
+
+
+/**
+ * Plugin options.
+ */
+export type PluginOptions = { };
 
 
 /**
  * Setup a new instance of the plugin.
  *
- * @param {module:webreed/lib/Environment} env
+ * @param env
  *   An environment that represents a webreed project.
- * @param {object} [options = null]
+ * @param options
  *   Additional options for configuring the plugin instnace.
- *
- * @returns {module:webreed/lib/interfaces/Mode}
- *   A mode for reading and writing resource files.
  */
-export default function setup(env, options) {
+export default function setup(env: Environment, options?: PluginOptions): void {
   let instance = new TextMode();
 
   env.modes.set("text", instance);

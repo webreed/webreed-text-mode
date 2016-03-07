@@ -14,7 +14,7 @@ import should from "should";
 import ResourceType from "webreed-core/lib/ResourceType";
 
 // Project
-import TextMode from "../src/TextMode";
+import TextMode from "../lib/TextMode";
 
 
 function getFixturePath(relativePath) {
@@ -180,18 +180,6 @@ Lorem ipsum!`,
     it("is a function", function () {
       this.textMode.readString
         .should.be.a.Function();
-    });
-
-    given( undefined, null, 42 ).
-    it("throws error when argument 'source' is not a string", function (source) {
-      (() => this.textMode.readString(source))
-        .should.throw("argument 'source' must be a string");
-    });
-
-    given( 42, "true", "false" ).
-    it("throws error when argument 'parseFrontmatter' is specified but is not a boolean value", function (parseFrontmatter) {
-      (() => this.textMode.readString("", parseFrontmatter))
-        .should.throw("argument 'parseFrontmatter' must be a boolean value");
     });
 
     given( undefined, null, true ).

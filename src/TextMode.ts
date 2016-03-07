@@ -1,41 +1,44 @@
 // Copyright (c) Rotorz Limited. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
-/** @module webreed-text-mode/lib/TextMode */
-
 
 // System
 import { Buffer } from "buffer";
 
 // Packages
-import fs from "fs-promise";
-import yaml from "js-yaml";
+const fs = require("fs-promise");
+import * as yaml from "js-yaml";
+
+// Webreed Core
+import Mode from "webreed-core/lib/interfaces/Mode";
+import Resource from "webreed-core/lib/Resource";
+import ResourceType from "webreed-core/lib/ResourceType";
 
 
 /**
  * Mode for reading and writing text resource files.
- *
- * @implements {module:webreed/lib/interfaces/Mode}
  */
-export default class TextMode {
+export default class TextMode implements Mode {
 
-  readFile(path, resourceType) {
-    resourceType = resourceType || {};
-
+  async readFile(path: string, resourceType: ResourceType): Promise<Object> {
+    let parseFrontmatter = !!resourceType ? resourceType.parseFrontmatter : true;
     let encoding = resolveEncoding(resourceType);
-    return fs.readFile(path, encoding).then(source => {
-      let data = this.readString(source, resourceType.parseFrontmatter);
-      // Allow frontmatter of resource to override the resource's output encoding.
-      data._encoding = data._encoding || encoding;
-      return data;
-    });
+
+    let str = await fs.readFile(path, encoding);
+    let data = this.readString(str, parseFrontmatter);
+
+    // Allow frontmatter of resource to override the resource's output encoding.
+    data["_encoding"] = data["_encoding"] || encoding;
+
+    return data;
   }
 
-  writeFile(path, resource, resourceType) {
-    resource = resource || { };
+  writeFile(path: string, resource: Resource, resourceType: ResourceType): Promise<void> {
+    let data: any = resource || { };
 
-    let encoding = resource._encoding || resolveEncoding(resourceType);
-    let body = resource.body || "";
+    let encoding = data["_encoding"] || resolveEncoding(resourceType);
+    let body = data["body"] || "";
+
     return fs.writeFile(path, body, encoding);
   }
 
@@ -53,30 +56,25 @@ export default class TextMode {
    *     let resource = meta.parse("---\ntitle: An example without main body");
    *     console.log(resource.body === ""); // true
    *
-   * @param {string} source
+   * @param source
    *   Source with frontmatter and/or resource.
-   * @param {boolean} [parseFrontmatter = true]
+   * @param parseFrontmatter
    *   Indicates whether any frontmatter should be parsed.
    *
-   * @returns {object.<string, any>}
+   * @returns
    *   An object with fields from frontmatter.
    */
-  readString(source, parseFrontmatter) {
+  readString(source: string, parseFrontmatter: boolean = true): { [key: string]: any } {
     if (parseFrontmatter === undefined || parseFrontmatter === null) {
       parseFrontmatter = true;
     }
 
-    console.assert(typeof source === "string",
-        "argument 'source' must be a string");
-    console.assert(typeof parseFrontmatter === "boolean",
-        "argument 'parseFrontmatter' must be a boolean value");
-
-    let data = { };
+    let data = { body: "" };
     let body = source;
 
     if (parseFrontmatter === true) {
       // Does source resource begin with frontmatter?
-      let frontmatter = false;
+      let frontmatter = "";
       if (source.startsWith("---")) {
         let frontmatterMatches = source.match(/^---([^]+?)^---$/m);
         if (frontmatterMatches !== null) {
@@ -89,7 +87,7 @@ export default class TextMode {
         }
       }
 
-      if (frontmatter !== false && frontmatter !== "") {
+      if (frontmatter !== "") {
         // Try to parse YAML encoded frontmatter.
         data = yaml.safeLoad(frontmatter);
         // Assume 'body' field from frontmatter if main body doesn't exist.
@@ -115,6 +113,6 @@ export default class TextMode {
 }
 
 
-function resolveEncoding(resourceType) {
+function resolveEncoding(resourceType: ResourceType): string {
   return (!!resourceType && resourceType.encoding) || "utf8";
 }
