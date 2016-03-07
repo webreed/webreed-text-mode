@@ -7,15 +7,15 @@ import { Buffer } from "buffer";
 const fs = require("fs-promise");
 import * as yaml from "js-yaml";
 
-import Mode from "webreed-core/lib/plugin/Mode";
-import Resource from "webreed-core/lib/Resource";
-import ResourceType from "webreed-core/lib/ResourceType";
+import {Mode} from "webreed-core/lib/plugin/Mode";
+import {Resource} from "webreed-core/lib/Resource";
+import {ResourceType} from "webreed-core/lib/ResourceType";
 
 
 /**
  * Mode for reading and writing text resource files.
  */
-export default class TextMode implements Mode {
+export class TextMode implements Mode {
 
   async readFile(path: string, resourceType: ResourceType): Promise<Object> {
     let parseFrontmatter = !!resourceType ? resourceType.parseFrontmatter : true;

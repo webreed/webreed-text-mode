@@ -8,9 +8,9 @@ import path from "path";
 import given from "mocha-testdata";
 import should from "should";
 
-import ResourceType from "webreed-core/lib/ResourceType";
+import {ResourceType} from "webreed-core/lib/ResourceType";
 
-import TextMode from "../lib/TextMode";
+import {TextMode} from "../lib/TextMode";
 
 
 function getFixturePath(relativePath) {

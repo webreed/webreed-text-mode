@@ -5,9 +5,9 @@
 import given from "mocha-testdata";
 import should from "should";
 
-import Environment from "webreed-core/lib/Environment";
+import {Environment} from "webreed-core/lib/Environment";
 
-import TextMode from "../lib/TextMode";
+import {TextMode} from "../lib/TextMode";
 import setup from "../lib/setup";
 
 
