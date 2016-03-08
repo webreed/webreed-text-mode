@@ -5,7 +5,7 @@
 import { Buffer } from "buffer";
 
 const fs = require("fs-promise");
-import * as yaml from "js-yaml";
+import yaml = require("js-yaml");
 
 import {Mode} from "webreed-core/lib/plugin/Mode";
 import {Resource} from "webreed-core/lib/Resource";
