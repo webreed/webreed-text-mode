@@ -8,8 +8,8 @@ const fs = require("fs-promise");
 import yaml = require("js-yaml");
 
 import {Mode} from "webreed-core/lib/plugin/Mode";
-import {Resource} from "webreed-core/lib/Resource";
 import {ResourceType} from "webreed-core/lib/ResourceType";
+import {Resource} from "webreed-core/lib/Resource";
 
 
 /**
