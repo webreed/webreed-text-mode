@@ -11,7 +11,7 @@ import {TextMode} from "../lib/TextMode";
 import setup from "../lib/setup";
 
 
-describe("#setup(options)", function () {
+describe("#setup(env, options)", function () {
 
   it("is a function", function () {
     setup
