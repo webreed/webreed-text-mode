@@ -2,8 +2,6 @@
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 
-import { Buffer } from "buffer";
-
 const fs = require("fs-promise");
 import yaml = require("js-yaml");
 
