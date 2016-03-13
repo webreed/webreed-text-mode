@@ -2,6 +2,10 @@
   "name": "webreed-text-mode",
   "version": "0.0.1",
   "description": "Text mode plugin for webreed.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webreed/webreed-text-mode"
+  },
   "main": "lib/setup.js",
   "typings": "lib/setup.d.ts",
   "scripts": {
