@@ -1,6 +1,6 @@
 {
   "name": "webreed-text-mode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Text mode plugin for webreed.",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "dependencies": {
     "fs-promise": "^0.5.0",
     "js-yaml": "^3.4.6",
-    "webreed-core": "^0.0.4"
+    "webreed-core": "^0.0.5"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
