@@ -1,7 +1,11 @@
-# webreed-text-mode [![Build Status](https://travis-ci.org/webreed/webreed-text-mode.svg?branch=master)](https://travis-ci.org/webreed/webreed-text-mode)
+# webreed-text-mode
 
 A plugin for [webreed](https://github.com/webreed/webreed) that provides support for
 reading and writing text resource files.
+
+[![Build Status](https://travis-ci.org/webreed/webreed-text-mode.svg?branch=master)](https://travis-ci.org/webreed/webreed-text-mode)
+[![Dependency Status](https://david-dm.org/webreed/webreed-text-mode.svg)](https://david-dm.org/webreed/webreed-text-mode)
+[![devDependency Status](https://david-dm.org/webreed/webreed-text-mode/dev-status.svg)](https://david-dm.org/webreed/webreed-text-mode#info=devDependencies)
 
 
 ## Contribution Agreement
