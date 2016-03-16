@@ -1,6 +1,6 @@
 {
   "name": "webreed-text-mode",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Text mode plugin for webreed.",
   "repository": {
     "type": "git",
