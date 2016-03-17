@@ -1,11 +1,12 @@
-# webreed-text-mode
+# webreed-text-mode [![Build Status](https://travis-ci.org/webreed/webreed-text-mode.svg?branch=master)](https://travis-ci.org/webreed/webreed-text-mode)
+
+[![Gitter](https://badges.gitter.im/webreed/webreed.svg)](https://gitter.im/webreed/webreed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![npm version](https://badge.fury.io/js/webreed-text-mode.svg)](https://badge.fury.io/js/webreed-text-mode)
+[![Dependency Status](https://david-dm.org/webreed/webreed-text-mode.svg)](https://david-dm.org/webreed/webreed-text-mode)
+[![devDependency Status](https://david-dm.org/webreed/webreed-text-mode/dev-status.svg)](https://david-dm.org/webreed/webreed-text-mode#info=devDependencies)
 
 A plugin for [webreed](https://github.com/webreed/webreed) that provides support for
 reading and writing text resource files.
-
-[![Build Status](https://travis-ci.org/webreed/webreed-text-mode.svg?branch=master)](https://travis-ci.org/webreed/webreed-text-mode)
-[![Dependency Status](https://david-dm.org/webreed/webreed-text-mode.svg)](https://david-dm.org/webreed/webreed-text-mode)
-[![devDependency Status](https://david-dm.org/webreed/webreed-text-mode/dev-status.svg)](https://david-dm.org/webreed/webreed-text-mode#info=devDependencies)
 
 
 ## Contribution Agreement
