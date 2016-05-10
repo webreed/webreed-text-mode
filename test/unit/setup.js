@@ -7,8 +7,8 @@ import should from "should";
 
 import {Environment} from "webreed-core/lib/Environment";
 
-import setup from "../lib/setup";
-import {TextMode} from "../lib/TextMode";
+import setup from "../../lib/setup";
+import {TextMode} from "../../lib/TextMode";
 
 
 describe("#setup(env, options)", function () {
