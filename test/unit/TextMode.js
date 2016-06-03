@@ -1,16 +1,18 @@
 // Copyright (c) Rotorz Limited. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
+"use strict";
 
-import fs from "fs-promise";
-import path from "path";
 
-import given from "mocha-testdata";
-import should from "should";
+const fs = require("fs-promise");
+const path = require("path");
 
-import {ResourceType} from "webreed-core/lib/ResourceType";
+const given = require("mocha-testdata");
+const should = require("should");
 
-import {TextMode} from "../../lib/TextMode";
+const ResourceType = require("webreed-core/lib/ResourceType").ResourceType;
+
+const TextMode = require("../../lib/TextMode").TextMode;
 
 
 function getFixturePath(relativePath) {
